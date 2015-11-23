@@ -120,3 +120,5 @@ GET trustedanalytics-meta/dataset/_search
 * Example of a query to our custom analyzer (called uri_analyzer)
 `GET trustedanalytics-meta/_analyze?analyzer=uri_analyzer&text='http:/some-addres.example.com/dataset'`
 
+Travis ci
+
