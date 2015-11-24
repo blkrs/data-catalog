@@ -1,8 +1,16 @@
-sudo: required
 language: python
 python:
   - "2.7"
 # command to install dependencies
-install: "sudo pip install tox && mkdir -p vendor/ && pip install --download vendor/ -r requirements-normal.txt && pip install --download vendor/ -r requirements-native.txt --no-use-wheel"
+install: 
+  - pip install tox 
+  - pip install coveralls 
+  - mkdir -p vendor
+  - pip install --download vendor/ -r requirements-normal.txt
+  - pip install --download vendor/ -r requirements-native.txt --no-use-wheel"
 # command to run tests
-script: tox
+script: 
+    tox
+# code coverage
+after_success:
+    coveralls
